@@ -58,7 +58,7 @@ is-dark
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="content">
+                    <div class="box drug-name">
                         <div class="tags">
                             <span v-for="oneTag in drugData.TAGS" :class=colorTag[oneTag]>{{oneTag}}</span>
                         </div>
