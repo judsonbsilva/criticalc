@@ -73,7 +73,7 @@ is-dark
                         <b>Indicação</b>
                         <p>{{ drugData.RESUMO_INDICACAO }}</p>
                         <b>Dose usual</b>
-                        <p>{{ drugData.DOSE_01 }} {{ drugData.DOSE_UNI }}/{{ drugData.UNI_01 }}</p>
+                        <p>{{ drugData.DOSE_01 }} {{ drugData.UNI_APRESENTACAO }}/{{ drugData.UNI_01 }}</p>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@ is-dark
                         <div class="column is-6 is-6-mobile" v-if="drugData.ADMINISTRACAO == 'BIC'">
                             <span v-if="vazao">
                                 <b>Dose atual</b>
-                                <p>{{ calcDrug(drugData, weight, vazao) }} {{ drugData.DOSE_UNI }}/{{ drugData.UNI_01 }}</p>
+                                <p>{{ calcDrug(drugData, weight, vazao) }} {{ drugData.UNI_APRESENTACAO }}/{{ drugData.UNI_01 }}</p>
                             </span>
                         </div>
                     </div>

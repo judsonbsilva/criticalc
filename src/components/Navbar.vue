@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const emit = defineEmits(['updateWeight', 'updateHeight']);
 const dataWeight = ref(null);
@@ -13,6 +13,12 @@ const handleHeight = (ev) => {
     dataHeight.value = Number(ev.target.value);
     emit('updateHeight', dataHeight);
 }
+
+onMounted(() => {
+
+})
+
+
 </script>
 
 <template>
@@ -30,6 +36,7 @@ const handleHeight = (ev) => {
                         class="input"
                         type="number"
                         placeholder="Peso 70kg"
+                        :value="dataWeight"
                         @input=handleWeight
                     />
                 </div>
@@ -40,6 +47,7 @@ const handleHeight = (ev) => {
                         class="input"
                         type="number"
                         placeholder="Altura 165cm"
+                        :value="dataHeight"
                         @input=handleHeight
                     />
                 </div>
