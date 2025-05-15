@@ -18,7 +18,12 @@ const handleHeight = (ev) => {
 <template>
     <nav class="navbar">
         <div class="navbar-brand">
-            <a class="navbar-item" href="#">CRITICALC</a>
+            <a class="navbar-item" href="#">
+                <svg width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+                  <image href="/criticalc.svg" height="28" width="28" />
+                </svg>
+                <span>CRITICALC</span>
+            </a>
             <div class="navbar-item input-navbar-item">
                 <div class="control">
                     <input
@@ -45,6 +50,6 @@ const handleHeight = (ev) => {
 
 <style scoped>
 .input-navbar-item {
-    width: 40%;
+    max-width: 33%;
  }
 </style>

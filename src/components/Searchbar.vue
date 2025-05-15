@@ -29,7 +29,7 @@ const handleMoney = (value) => {
 
 <template>
     <div class="panel is-link">
-        <p class="panel-tabs" id="input-click-tag">
+        <p class="panel-tabs tabs" id="input-click-tag">
             <a @click="handleTag('sedativo')">
                 <span class="icon is-small"><i class="fas fa-capsules" aria-hidden="true"></i></span>
                 <span>Sedoanalgesia</span>
@@ -45,6 +45,10 @@ const handleMoney = (value) => {
             <a @click="handleTag('iot')">
                 <span class="icon is-small"><i class="fas fa-lungs" aria-hidden="true"></i></span>
                 <span>Intubação</span>
+            </a>
+            <a @click="handleTag('outro')">
+                <span class="icon is-small"><i class="fas fa-plus" aria-hidden="true"></i></span>
+                <span>Arritmias</span>
             </a>
             <a @click="handleTag('outro')">
                 <span class="icon is-small"><i class="fas fa-plus" aria-hidden="true"></i></span>
@@ -74,11 +78,12 @@ const handleMoney = (value) => {
             </header>
             <section class="modal-card-body">
                 <b>Atenção!</b><br />
-                <p>Este site é uma calculadora destinada para médicos e estudantes de medicina disponibilizada
-                    gratuitamente para facilitar a prescrição de medicamentos em pacientes críticos. Não utilize como
-                    recomendação médica! </p>
-                <p>Os cálculos são feitos automaticamente a partir do peso. Estamos em fase de teste, sempre confira as
-                    doses recomendadas e desconfie de valores muito fora do habitual.</p>
+                <p>Este site é uma calculadora de código aberto, disponibilizada gratuitamente, 
+                   destinada para médicos e estudantes de medicina para facilitar a prescrição de pacientes críticos.
+                   Não utilize como recomendação médica!</p>
+                <p>Os cálculos são feitos automaticamente a partir do peso.
+                    Estamos em fase de teste,
+                    sempre confira as doses recomendadas e desconfie de valores muito fora do habitual.</p>
                 <br />
                 <i>Faça bom proveito e salve muitas vidas! :D</i>
                 <br /><br />
@@ -99,10 +104,17 @@ const handleMoney = (value) => {
     <div :class="['modal', moneyIsOpen? 'is-active' : '' ]">
         <div class="modal-background"></div>
         <div class="modal-content">
-            <p><b>Email (e chave PIX): </b> judsonbarroso@gmail.com</p>
-            <br />
-            <p>Envie suas dúvidas, críticas e sugestões</p>
-            <p>PS: este site respira por aparelhos, doe um tostão e ajude salvá-lo!</p>
+            <div class="card">
+                <div class="card-header">
+                    <p class="card-header-title">Email (e chave PIX): judsonbarroso@gmail.com</p>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <p>Envie suas dúvidas, críticas e sugestões</p>
+                        <p>PS: este site respira por aparelhos, doe um tostão e ajude salvá-lo!</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <button class="modal-close is-large" aria-label="close" @click="handleMoney(false)"></button>
     </div>

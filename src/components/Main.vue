@@ -40,7 +40,7 @@ watch([dataWeight, dataHeight, searchTerm, tag], (tst) => {
 
   if( tag.value ) {
     console.log('TAG > ', tag.value);
-    data.value = props.dataCSV.filter( (el) => el.ABA == tag.value );
+    data.value = props.dataCSV.filter( (el) => el.PAGINA == tag.value );
   }
 });
 

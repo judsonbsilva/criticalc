@@ -13,7 +13,7 @@ const vazao = ref(null);
 
 const colorTag = {
     'pcr': 'tag is-black',
-    'analgesico':'tag is-light',
+    'analgesico':'tag is-light has-text-dark',
     'sedoanalgesia':'tag is-primary',
     'opioide':'tag is-link',
     'dva':'tag is-info',
@@ -22,7 +22,7 @@ const colorTag = {
     'alfa-agonista':'tag is-success',
     'beta-agonista':'tag is-success',
     'inotropico': 'tag is-danger',   
-    'cronotropico': 'tag is-light',
+    'cronotropico': 'tag is-light has-text-dark',
     'antianginoso': 'tag is-danger',
     'vasodilatador': 'tag is-primary',
     'acls': 'tag is-danger',
@@ -54,7 +54,7 @@ is-dark
                 <div class="card-content">
                     <div class="content">
                         <b>{{ drugData.NOME }}</b>
-                        <p>{{ drugData.APRESENTACAO_FANTASIA }}</p>
+                        <p>{{ drugData.FANTASIA_APRESENTACAO }}</p>
                     </div>
                 </div>
                 <div class="card-footer">
