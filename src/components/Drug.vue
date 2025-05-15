@@ -49,6 +49,9 @@ is-dark
 </script>
 <template>
     <div class="columns is-mobile is-multiline" style="border-bottom: 1px solid #aaa">
+        <div class="content" v-if="drugData ? false: true">
+            <h2>Não localizado ou em construção</h2>
+        </div>
         <div class="column is-2-desktop is-6-mobile" style="cursor:pointer">
             <div class="card drug-name">
                 <div class="card-content">

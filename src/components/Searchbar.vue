@@ -46,7 +46,7 @@ const handleMoney = (value) => {
                 <span class="icon is-small"><i class="fas fa-lungs" aria-hidden="true"></i></span>
                 <span>Intubação</span>
             </a>
-            <a @click="handleTag('outro')">
+            <a @click="handleTag('arritmia')">
                 <span class="icon is-small"><i class="fas fa-plus" aria-hidden="true"></i></span>
                 <span>Arritmias</span>
             </a>
