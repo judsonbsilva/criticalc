@@ -49,7 +49,7 @@ is-dark
 </script>
 <template>
     <div class="columns is-mobile is-multiline" style="border-bottom: 1px solid #aaa">
-        <div class="column is-2-desktop is-4-mobile" style="cursor:pointer">
+        <div class="column is-2-desktop is-6-mobile" style="cursor:pointer">
             <div class="card drug-name">
                 <div class="card-content">
                     <div class="content">
@@ -66,12 +66,12 @@ is-dark
                 </div>
             </div>
         </div>
-        <div class="column is-5-desktop is-8-mobile">
+        <div class="column is-5-desktop is-6-mobile">
             <div class="card">
                 <div class="card-content">
                     <div class="content">
-                        <b>Diluição padrão</b>
-                        <p>{{ drugData.DILUICAO }}</p>
+                        <b>Indicação</b>
+                        <p>{{ drugData.RESUMO_INDICACAO }}</p>
                         <b>Dose usual</b>
                         <p>{{ drugData.DOSE_01 }} {{ drugData.DOSE_UNI }}/{{ drugData.UNI_01 }}</p>
                     </div>
@@ -84,29 +84,23 @@ is-dark
                     <div class="columns is-multiline">
                         <div class="column is-12">
                             <div class="content">
+                                <b>Diluição</b>
+                                <p>{{ drugData.DILUICAO }}</p>
                                 <b>Fazer</b>
                                 <p>{{ showCalc(drugData.ADMINISTRACAO, calcDrug(drugData, weight)) }}</p>
                             </div>
                         </div>
-                        <div class="column is-6 is-6-mobile">
+                        <div class="column is-6 is-6-mobile" v-if="drugData.ADMINISTRACAO == 'BIC'">
                             <div class="control">
-                                <b>Vazão atual</b>
-                                <input class="input" type="number" v-model="vazao" placeholder="(ml/h)"/>
+                                <b>Cálculo de dose</b>
+                                <input class="input" type="number" v-model="vazao" placeholder="vazão atual (ml/h)"/>
                             </div>
                         </div>
-
-                        <div class="column is-6 is-6-mobile">
+                        <div class="column is-6 is-6-mobile" v-if="drugData.ADMINISTRACAO == 'BIC'">
                             <span v-if="vazao">
                                 <b>Dose atual</b>
                                 <p>{{ calcDrug(drugData, weight, vazao) }} {{ drugData.DOSE_UNI }}/{{ drugData.UNI_01 }}</p>
                             </span>
-                        </div>
-                    </div>
-                    <div class="column is-12">
-                        <div class="content">
-                            <b>Observação</b>
-                            <p>{{ drugData.DESCRICAO }}</p>
-                            <p>{{ drugData.COLATERAIS }}</p>
                         </div>
                     </div>
                 </div>
