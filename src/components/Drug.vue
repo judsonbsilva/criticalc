@@ -84,26 +84,24 @@ is-dark
         <div class="cell is-col-span-2">
             <div class="card" v-if="weight">
                 <div class="card-content">
-                    <div class="columns is-multiline">
-                        <div class="column is-12">
+                    <div class="content">
+                        <b>Diluição</b>
+                        <p>{{ drugData.DILUICAO }}</p>
+                        <b>Fazer</b>
+                        <p>{{ showCalc(drugData.ADMINISTRACAO, calcDrug(drugData, weight)) }}</p>
+                    </div>
+                    <div class="grid" v-if="drugData.ADMINISTRACAO == 'BIC'">
+                        <div class="cell">
                             <div class="content">
-                                <b>Diluição</b>
-                                <p>{{ drugData.DILUICAO }}</p>
-                                <b>Fazer</b>
-                                <p>{{ showCalc(drugData.ADMINISTRACAO, calcDrug(drugData, weight)) }}</p>
-                            </div>
-                        </div>
-                        <div class="column is-6 is-6-mobile" v-if="drugData.ADMINISTRACAO == 'BIC'">
-                            <div class="control">
                                 <b>Cálculo de dose</b>
                                 <input class="input" type="number" v-model="vazao" placeholder="vazão atual (ml/h)"/>
                             </div>
                         </div>
-                        <div class="column is-6 is-6-mobile" v-if="drugData.ADMINISTRACAO == 'BIC'">
-                            <span v-if="vazao">
+                        <div class="cell">
+                            <div class="content" v-if="vazao">
                                 <b>Dose atual</b>
                                 <p>{{ calcDrug(drugData, weight, vazao) }} {{ drugData.UNI_APRESENTACAO }}/{{ drugData.UNI_01 }}</p>
-                            </span>
+                            </div>
                         </div>
                     </div>
                 </div>
