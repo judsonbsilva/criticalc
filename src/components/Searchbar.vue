@@ -29,36 +29,38 @@ const handleMoney = (value) => {
 
 <template>
     <div class="panel is-link">
-        <p class="panel-tabs tabs" id="input-click-tag">
-            <a @click="handleTag('sedativo')">
+        <ul class="panel-tabs tabs" id="input-click-tag">
+            <li>
+                <a @click="handleTag('sedativo')">
                 <span class="icon is-small"><i class="fas fa-capsules" aria-hidden="true"></i></span>
                 <span>Sedoanalgesia</span>
-            </a>
-            <a @click="handleTag('dva')">
+                </a>
+            </li>
+            <li><a @click="handleTag('dva')">
                 <span class="icon is-small"><i class="fas fa-capsules" aria-hidden="true"></i></span>
                 <span>Droga vasoativa</span>
-            </a>
-            <a @click="handleTag('pcr')">
+            </a></li>
+            <li><a @click="handleTag('pcr')">
                 <span class="icon is-small"><i class="fas fa-heart-circle-xmark"></i></span>
                 <span>PCR</span>
-            </a>
-            <a @click="handleTag('iot')">
+            </a></li>
+            <li><a @click="handleTag('iot')">
                 <span class="icon is-small"><i class="fas fa-lungs" aria-hidden="true"></i></span>
                 <span>Intubação</span>
-            </a>
-            <a @click="handleTag('arritmia')">
+            </a></li>
+            <li><a @click="handleTag('arritmia')">
                 <span class="icon is-small"><i class="fas fa-plus" aria-hidden="true"></i></span>
                 <span>Arritmias</span>
-            </a>
-            <a @click="handleTag('outro')">
+            </a></li>
+            <li><a @click="handleTag('outro')">
                 <span class="icon is-small"><i class="fas fa-plus" aria-hidden="true"></i></span>
                 <span>Outros</span>
-            </a>
-            <a @click="handleAbout(true)">
+            </a></li>
+            <li><a @click="handleAbout(true)">
                 <span class="icon is-small"><i class="fas fa-info" aria-hidden="true"></i></span>
                 <span>Sobre nós</span>
-            </a>
-        </p>
+            </a></li>
+        </ul>
         <div class="panel-block">
             <p class="control has-icons-left">
                 <input id="input-search" class="input" type="text" placeholder="noradrenalina" @input=handleSearch />
@@ -121,4 +123,5 @@ const handleMoney = (value) => {
 </template>
 
 <style scoped>
+#input-click-tag { margin-bottom: 0px }
 </style>
