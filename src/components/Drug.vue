@@ -30,7 +30,8 @@ const colorTag = {
     'insulina': 'tag is-black',
     'iot': 'tag is-black',
     'sri': 'tag is-primary',
-    'bnm': 'tag is-danger'
+    'bnm': 'tag is-danger',
+    'psa': 'tag is-info'
 }
 
 /*
@@ -55,7 +56,7 @@ is-dark
         <div class="cell" style="cursor:pointer">
             <div class="card drug-name">
                 <div class="card-content">
-                    <div class="content">
+                    <div class="content has-text-white">
                         <b>{{ drugData.NOME }}</b>
                         <p>{{ drugData.FANTASIA_APRESENTACAO }}</p>
                     </div>
