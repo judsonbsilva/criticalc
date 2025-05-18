@@ -101,10 +101,18 @@ is-dark
                         <div class="cell">
                             <div class="content" v-if="vazao">
                                 <b>Dose atual</b>
-                                <p>{{ calcDrug(drugData, weight, vazao) }} {{ drugData.UNI_APRESENTACAO }}/{{ drugData.UNI_01 }}</p>
+                                <p>{{ calcDrug(drugData, weight, vazao, 1) }} {{ drugData.UNI_APRESENTACAO }}/{{ drugData.UNI_01 }}</p>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="card-content" v-if="drugData.DOSE_02 && drugData.PAGINA == 'psa'">
+                    <div class="content">
+                        <b>Repetir (se necessário)</b>
+                        <p>Em {{ drugData.TEMPO_REPETIR }} minutos</p>
+                        <b>Fazer</b>
+                        <p>{{ showCalc(drugData, calcDrug(drugData, weight, NaN, 2)) }}</p>
+                    </div>    
                 </div>
             </div>
         </div>

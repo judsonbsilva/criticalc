@@ -67,9 +67,15 @@ const calcDrugDose = (concentration, weight, typeOfDosis, flow) => {
   return 0;
 }
 
-const calcDrug = (drug, weight, flow) => {
+const calcDrug = (drug, weight, flow, doseN) => {
   if( !weight || !Number(weight) || weight < 20)
     return -1;
+
+  if( !doseN ){
+    doseN = drug.DOSE_01;
+  } else if(doseN == 2){
+    doseN = drug.DOSE_02;
+  }
 
   if( flow && Number(flow) ){
     return calcDrugDose(
@@ -81,7 +87,7 @@ const calcDrug = (drug, weight, flow) => {
     return calcDrugFlow(
       drug.CONCENTRACAO,
       drug.DOSE_UNI,
-      drug.DOSE_01,
+      doseN,
       weight,
       drug.UNI_01);
   }
