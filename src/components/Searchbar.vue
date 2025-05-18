@@ -111,12 +111,8 @@ const handleMoney = (value) => {
             </header>
             <section class="modal-card-body">
                 <b>Atenção!</b><br />
-                <p>Este site é uma calculadora de código aberto, disponibilizada gratuitamente,
-                    destinada para médicos e estudantes de medicina para facilitar a prescrição de pacientes críticos.
-                    Não utilize como recomendação médica!</p>
-                <p>Os cálculos são feitos automaticamente a partir do peso.
-                    Estamos em fase de teste,
-                    sempre confira as doses recomendadas e desconfie de valores muito fora do habitual.</p>
+                <p>Este site é uma calculadora de código aberto disponibilizada gratuitamente a médicos e estudantes de medicina para auxiliar na prescrição de doentes críticos. Não utilize como recomendação médica!</p>
+                <p>As doses são calculadas a partir do peso. Estamos em fase de teste. Se notar doses fora do habitual, desconfie.</p>
                 <br />
                 <i>Faça bom proveito e salve muitas vidas! :D</i>
                 <br /><br />
@@ -127,7 +123,7 @@ const handleMoney = (value) => {
             </section>
             <footer class="modal-card-foot">
                 <div class="buttons">
-                    <button class="button is-success" @click="handleMoney(true)">Críticas, sugestões e doações</button>
+                    <button class="button is-success" @click="handleMoney(true)">Doe! (e critique)</button>
                     <button class="button" @click="handleAbout(false)">Sair</button>
                 </div>
             </footer>
