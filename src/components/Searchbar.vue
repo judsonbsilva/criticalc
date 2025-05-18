@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import About from './About.vue';
 
 const emit = defineEmits(['search', 'filterTag']);
 const searchTerm = ref('');
@@ -29,36 +28,70 @@ const handleMoney = (value) => {
 
 <template>
     <div class="panel is-link">
-        <p class="panel-tabs tabs" id="input-click-tag">
-            <a @click="handleTag('sedativo')">
-                <span class="icon is-small"><i class="fas fa-capsules" aria-hidden="true"></i></span>
-                <span>Sedoanalgesia</span>
-            </a>
-            <a @click="handleTag('dva')">
-                <span class="icon is-small"><i class="fas fa-capsules" aria-hidden="true"></i></span>
-                <span>Droga vasoativa</span>
-            </a>
-            <a @click="handleTag('pcr')">
-                <span class="icon is-small"><i class="fas fa-heart-circle-xmark"></i></span>
-                <span>PCR</span>
-            </a>
-            <a @click="handleTag('iot')">
-                <span class="icon is-small"><i class="fas fa-lungs" aria-hidden="true"></i></span>
-                <span>Intubação</span>
-            </a>
-            <a @click="handleTag('arritmia')">
-                <span class="icon is-small"><i class="fas fa-plus" aria-hidden="true"></i></span>
-                <span>Arritmias</span>
-            </a>
-            <a @click="handleTag('outro')">
-                <span class="icon is-small"><i class="fas fa-plus" aria-hidden="true"></i></span>
-                <span>Outros</span>
-            </a>
-            <a @click="handleAbout(true)">
-                <span class="icon is-small"><i class="fas fa-info" aria-hidden="true"></i></span>
-                <span>Sobre nós</span>
-            </a>
-        </p>
+        <ul class="panel-tabs tabs" id="input-click-tag">
+            <li @click="handleTag('sedativo')"
+                :class="[ tag == 'sedativo' ? 'is-active' : '']" >
+                <a>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas','bed']" />
+                    </span>
+                    <span>Sedoanalgesia</span>
+                </a>
+            </li>
+            <li @click="handleTag('dva')"
+                :class="[ tag == 'dva' ? 'is-active' : '']" >
+                <a>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas', 'capsules']" />
+                    </span>
+                    <span>Droga vasoativa</span>
+                </a>
+            </li>
+            <li @click="handleTag('pcr')"
+                :class="[ tag == 'pcr' ? 'is-active' : '']" >
+                <a>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas', 'skull']" />
+                    </span>
+                    <span>PCR</span>
+                </a>
+            </li>
+            <li @click="handleTag('iot')"
+                :class="[ tag == 'iot' ? 'is-active' : '']" >
+                <a>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas', 'lungs']" />
+                    </span>
+                    <span>Intubação</span>
+                </a>
+            </li>
+            <li @click="handleTag('arritmia')"
+                :class="[ tag == 'arritmia' ? 'is-active' : '']" >
+                <a>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas', 'heart-pulse']" />
+                    </span>
+                    <span>Arritmias</span>
+                </a>
+            </li>
+            <li @click="handleTag('outro')"
+                :class="[ tag == 'outro' ? 'is-active' : '']" >
+                <a>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas', 'person-circle-question']" />    
+                    </span>
+                    <span>Outros</span>
+                </a>
+            </li>
+            <li @click="handleAbout(true)">
+                <a>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas', 'circle-info']" />
+                    </span>
+                    <span>Sobre nós</span>
+                </a>
+            </li>
+        </ul>
         <div class="panel-block">
             <p class="control has-icons-left">
                 <input id="input-search" class="input" type="text" placeholder="noradrenalina" @input=handleSearch />
@@ -78,12 +111,8 @@ const handleMoney = (value) => {
             </header>
             <section class="modal-card-body">
                 <b>Atenção!</b><br />
-                <p>Este site é uma calculadora de código aberto, disponibilizada gratuitamente, 
-                   destinada para médicos e estudantes de medicina para facilitar a prescrição de pacientes críticos.
-                   Não utilize como recomendação médica!</p>
-                <p>Os cálculos são feitos automaticamente a partir do peso.
-                    Estamos em fase de teste,
-                    sempre confira as doses recomendadas e desconfie de valores muito fora do habitual.</p>
+                <p>Este site é uma calculadora de código aberto disponibilizada gratuitamente a médicos e estudantes de medicina para auxiliar na prescrição de doentes críticos. Não utilize como recomendação médica!</p>
+                <p>As doses são calculadas a partir do peso. Estamos em fase de teste. Se notar doses fora do habitual, desconfie.</p>
                 <br />
                 <i>Faça bom proveito e salve muitas vidas! :D</i>
                 <br /><br />
@@ -94,7 +123,7 @@ const handleMoney = (value) => {
             </section>
             <footer class="modal-card-foot">
                 <div class="buttons">
-                    <button class="button is-success" @click="handleMoney(true)">Críticas, sugestões e doações</button>
+                    <button class="button is-success" @click="handleMoney(true)">Doe! (e critique)</button>
                     <button class="button" @click="handleAbout(false)">Sair</button>
                 </div>
             </footer>
@@ -121,4 +150,6 @@ const handleMoney = (value) => {
 </template>
 
 <style scoped>
+#input-click-tag { margin-bottom: 0px }
+#input-click-tag .is-active { border-bottom: solid #fff 2px; }
 </style>
