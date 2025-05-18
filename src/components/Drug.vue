@@ -110,7 +110,7 @@ is-dark
                     <div class="content">
                         <b>Repetir (se necessário)</b>
                         <p>Em {{ drugData.TEMPO_REPETIR }} minutos</p>
-                        <b>Fazer</b>
+                        <b>Fazer (dose extra)</b>
                         <p>{{ showCalc(drugData, calcDrug(drugData, weight, NaN, 2)) }}</p>
                     </div>    
                 </div>
