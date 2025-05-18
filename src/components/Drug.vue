@@ -30,7 +30,8 @@ const colorTag = {
     'insulina': 'tag is-black',
     'iot': 'tag is-black',
     'sri': 'tag is-primary',
-    'bnm': 'tag is-danger'
+    'bnm': 'tag is-danger',
+    'psa': 'tag is-info'
 }
 
 /*
@@ -55,7 +56,7 @@ is-dark
         <div class="cell" style="cursor:pointer">
             <div class="card drug-name">
                 <div class="card-content">
-                    <div class="content">
+                    <div class="content has-text-white">
                         <b>{{ drugData.NOME }}</b>
                         <p>{{ drugData.FANTASIA_APRESENTACAO }}</p>
                     </div>
@@ -88,7 +89,7 @@ is-dark
                         <b>Diluição</b>
                         <p>{{ drugData.DILUICAO }}</p>
                         <b>Fazer</b>
-                        <p>{{ showCalc(drugData.ADMINISTRACAO, calcDrug(drugData, weight)) }}</p>
+                        <p>{{ showCalc(drugData, calcDrug(drugData, weight)) }}</p>
                     </div>
                     <div class="grid" v-if="drugData.ADMINISTRACAO == 'BIC'">
                         <div class="cell">
@@ -100,10 +101,18 @@ is-dark
                         <div class="cell">
                             <div class="content" v-if="vazao">
                                 <b>Dose atual</b>
-                                <p>{{ calcDrug(drugData, weight, vazao) }} {{ drugData.UNI_APRESENTACAO }}/{{ drugData.UNI_01 }}</p>
+                                <p>{{ calcDrug(drugData, weight, vazao, 1) }} {{ drugData.UNI_APRESENTACAO }}/{{ drugData.UNI_01 }}</p>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="card-content" v-if="drugData.DOSE_02 && drugData.PAGINA == 'psa'">
+                    <div class="content">
+                        <b>Repetir (se necessário)</b>
+                        <p>Em {{ drugData.TEMPO_REPETIR }} minutos</p>
+                        <b>Fazer (dose extra)</b>
+                        <p>{{ showCalc(drugData, calcDrug(drugData, weight, NaN, 2)) }}</p>
+                    </div>    
                 </div>
             </div>
         </div>

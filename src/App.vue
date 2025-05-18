@@ -2,7 +2,7 @@
 import Papa from 'papaparse';
 import Main from './components/Main.vue';
 import { ref, onMounted } from 'vue';
-import dataText from '/database2.csv?url&raw';
+import dataText from '/database3.csv?url&raw';
 
 const dataCSV = ref(null);
 
