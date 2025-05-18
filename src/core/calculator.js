@@ -71,7 +71,7 @@ const calcDrug = (drug, weight, flow) => {
   if( !weight || !Number(weight) || weight < 20)
     return -1;
 
-  if( flow && Number(flow)){
+  if( flow && Number(flow) ){
     return calcDrugDose(
       drug.CONCENTRACAO,
       weight,
@@ -86,16 +86,32 @@ const calcDrug = (drug, weight, flow) => {
       drug.UNI_01);
   }
 }
-
-const showCalc = (ADMIN, arrayValue) => {
+/**
+ * 
+ * @param {não tenho ideia} ADMIN 
+ * @param {valores a seres administrados} arrayValue 
+ * @returns 
+ */
+const showCalc = (drug, arrayValue) => {
   
+  console.log("SHOWCALC: ",drug, arrayValue);
+
+  const ADMIN = drug.ADMINISTRACAO;
   var textValue = '';
+  var timeValue = '';
   if(arrayValue[0] == arrayValue[1])
     textValue = `${arrayValue[0]}`;
   else
     textValue = `Entre ${arrayValue[0]} e ${arrayValue[1]}`;
 
-  console.log('SHOWCALC FN > ', ADMIN, arrayValue);
+  if(drug.TEMPO_ADMINISTRACAO){
+    if(drug.TEMPO_ADMINISTRACAO == 1)
+      timeValue = `1 minuto`;
+    else if(drug.TEMPO_ADMINISTRACAO > 1)
+      timeValue = `${drug.TEMPO_ADMINISTRACAO} minutos`;
+    else 
+      timeValue = `${Math.round(drug.TEMPO_ADMINISTRACAO * 60)} segundos`;
+  }
 
   switch(ADMIN) {
     case 'BOLUS': 
@@ -106,6 +122,8 @@ const showCalc = (ADMIN, arrayValue) => {
       return `${textValue} mL EV em gotejamento aberto`;
     case 'BIC':
       return `${textValue} mL/h EV em BIC`;
+    case 'EVTEMPO':
+      return `${textValue} mL EV em ${timeValue}`;
   }
 }
 

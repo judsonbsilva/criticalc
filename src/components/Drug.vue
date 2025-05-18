@@ -89,7 +89,7 @@ is-dark
                         <b>Diluição</b>
                         <p>{{ drugData.DILUICAO }}</p>
                         <b>Fazer</b>
-                        <p>{{ showCalc(drugData.ADMINISTRACAO, calcDrug(drugData, weight)) }}</p>
+                        <p>{{ showCalc(drugData, calcDrug(drugData, weight)) }}</p>
                     </div>
                     <div class="grid" v-if="drugData.ADMINISTRACAO == 'BIC'">
                         <div class="cell">

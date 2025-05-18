@@ -74,13 +74,13 @@ const handleMoney = (value) => {
                     <span>Arritmias</span>
                 </a>
             </li>
-            <li @click="handleTag('outro')"
-                :class="[ tag == 'outro' ? 'is-active' : '']" >
+            <li @click="handleTag('psa')"
+                :class="[ tag == 'psa' ? 'is-active' : '']" >
                 <a>
                     <span class="icon is-small">
-                        <font-awesome-icon :icon="['fas', 'person-circle-question']" />    
+                        <font-awesome-icon :icon="['fas', 'eye-dropper']" />   
                     </span>
-                    <span>Outros</span>
+                    <span>Sedação procedural</span>
                 </a>
             </li>
             <li @click="handleAbout(true)">
