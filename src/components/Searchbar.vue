@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import About from './About.vue';
 
 const emit = defineEmits(['search', 'filterTag']);
 const searchTerm = ref('');
@@ -29,52 +28,66 @@ const handleMoney = (value) => {
 
 <template>
     <div class="panel is-link">
-        <ul class="panel-tabs tabs is-centered" id="input-click-tag">
+        <ul class="panel-tabs tabs" id="input-click-tag">
             <li @click="handleTag('sedativo')"
                 :class="[ tag == 'sedativo' ? 'is-active' : '']" >
                 <a>
-                    <span class="icon is-small"><i class="fas fa-capsules" aria-hidden="true"></i></span>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas','bed']" />
+                    </span>
                     <span>Sedoanalgesia</span>
                 </a>
             </li>
             <li @click="handleTag('dva')"
                 :class="[ tag == 'dva' ? 'is-active' : '']" >
                 <a>
-                    <span class="icon is-small"><i class="fas fa-capsules" aria-hidden="true"></i></span>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas', 'capsules']" />
+                    </span>
                     <span>Droga vasoativa</span>
                 </a>
             </li>
             <li @click="handleTag('pcr')"
                 :class="[ tag == 'pcr' ? 'is-active' : '']" >
                 <a>
-                    <span class="icon is-small"><i class="fas fa-heart-circle-xmark"></i></span>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas', 'skull']" />
+                    </span>
                     <span>PCR</span>
                 </a>
             </li>
             <li @click="handleTag('iot')"
                 :class="[ tag == 'iot' ? 'is-active' : '']" >
                 <a>
-                    <span class="icon is-small"><i class="fas fa-lungs" aria-hidden="true"></i></span>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas', 'lungs']" />
+                    </span>
                     <span>Intubação</span>
                 </a>
             </li>
             <li @click="handleTag('arritmia')"
                 :class="[ tag == 'arritmia' ? 'is-active' : '']" >
                 <a>
-                    <span class="icon is-small"><i class="fas fa-plus" aria-hidden="true"></i></span>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas', 'heart-pulse']" />
+                    </span>
                     <span>Arritmias</span>
                 </a>
             </li>
             <li @click="handleTag('outro')"
                 :class="[ tag == 'outro' ? 'is-active' : '']" >
                 <a>
-                    <span class="icon is-small"><i class="fas fa-plus" aria-hidden="true"></i></span>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas', 'person-circle-question']" />    
+                    </span>
                     <span>Outros</span>
                 </a>
             </li>
             <li @click="handleAbout(true)">
                 <a>
-                    <span class="icon is-small"><i class="fas fa-info" aria-hidden="true"></i></span>
+                    <span class="icon is-small">
+                        <font-awesome-icon :icon="['fas', 'circle-info']" />
+                    </span>
                     <span>Sobre nós</span>
                 </a>
             </li>
