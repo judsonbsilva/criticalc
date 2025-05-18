@@ -1,4 +1,5 @@
-# CRITICALC
+
+# ![Criticalc, logo](/public/criticalc.svg) CRITICALC
 *Calculadora médica para doentes críticos*
 
 Este site é uma calculadora de código aberto disponibilizada gratuitamente a médicos e estudantes de medicina para auxiliar na prescrição de doentes críticos. Não utilize como recomendação médica, para isto procure o seu médico.
