@@ -4,6 +4,7 @@ import { onMounted, ref, watch } from "vue";
 import Drug from './Drug.vue'
 import Navbar from './Navbar.vue'
 import Searchbar from './Searchbar.vue'
+import Footer from './Footer.vue'
 
 const props = defineProps({
   dataCSV: Array
@@ -63,6 +64,7 @@ onMounted(() => {
         :key=drugId++
       />
     </div>
+    <Footer />
   </div>
 </template>
 
