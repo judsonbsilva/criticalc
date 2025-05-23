@@ -96,7 +96,7 @@ const handleMoney = (value) => {
             <p class="control has-icons-left">
                 <input id="input-search" class="input" type="text" placeholder="noradrenalina" @input=handleSearch />
                 <span class="icon is-left">
-                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <font-awesome-icon :icon="['fas', 'search']" />
                 </span>
             </p>
         </div>
