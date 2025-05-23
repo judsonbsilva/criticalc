@@ -83,7 +83,7 @@ is-dark
             </div>
         </div>
         <div class="cell is-col-span-2">
-            <div class="card" v-if="weight">
+            <div class="card has-background-primary-100 has-text-primary-invert" v-if="weight">
                 <div class="card-content">
                     <div class="grid">
                         <div class="cell">
@@ -119,10 +119,10 @@ is-dark
                     </div>    
                 </div>
             </div>
-            <div class="card" v-if="!weight">
+            <div class="card card has-background-primary-100 has-text-primary-invert" v-if="!weight">
                 <div class="card-content">
                     <div class="content">
-                        <p>Digite o peso!</p>
+                        <p>Digite o peso para o cálculo de doses!</p>
                     </div>
                 </div>
             </div>
