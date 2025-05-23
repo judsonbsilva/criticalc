@@ -85,11 +85,15 @@ is-dark
         <div class="cell is-col-span-2">
             <div class="card" v-if="weight">
                 <div class="card-content">
-                    <div class="content">
-                        <b>Diluição</b>
-                        <p>{{ drugData.DILUICAO }}</p>
-                        <b>Fazer</b>
-                        <p>{{ showCalc(drugData, calcDrug(drugData, weight)) }}</p>
+                    <div class="grid">
+                        <div class="cell">
+                            <b>Diluição</b>
+                            <p>{{ drugData.DILUICAO }}</p>
+                        </div>
+                        <div class="cell">
+                            <b>Fazer</b>
+                            <p>{{ showCalc(drugData, calcDrug(drugData, weight)) }}</p>
+                        </div>
                     </div>
                     <div class="grid" v-if="drugData.ADMINISTRACAO == 'BIC'">
                         <div class="cell">
@@ -113,6 +117,13 @@ is-dark
                         <b>Fazer (dose extra)</b>
                         <p>{{ showCalc(drugData, calcDrug(drugData, weight, NaN, 2)) }}</p>
                     </div>    
+                </div>
+            </div>
+            <div class="card" v-if="!weight">
+                <div class="card-content">
+                    <div class="content">
+                        <p>Digite o peso!</p>
+                    </div>
                 </div>
             </div>
         </div>
