@@ -6,6 +6,7 @@ import Navbar from './Navbar.vue'
 import Searchbar from './Searchbar.vue'
 import Footer from './Footer.vue'
 import References from './References.vue'
+import Iot from './pages/Iot.vue'
 
 const props = defineProps({
   dataCSV: Array
@@ -54,6 +55,7 @@ onMounted(() => {
   <div>
     <Navbar @updateWeight=updateWeight @updateHeight=updateHeight />
     <Searchbar @search=updateSearch @filterTag=updateTag />
+    <Iot v-if="tag == 'iot'"/>
     <div v-if=data>
       <Drug
         v-for="drug in data"

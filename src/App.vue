@@ -33,5 +33,6 @@ onMounted(() => {
 </template>
 
 <style>
-@import "/node_modules/bulma/css/bulma.min.css"
+@import "/node_modules/bulma/css/bulma.min.css";
+@import "/node_modules/bulma-o-steps/bulma-steps.min.css";
 </style>
