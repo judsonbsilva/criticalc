@@ -99,13 +99,14 @@ is-dark
                         <div class="cell">
                             <div class="content">
                                 <b>Cálculo de dose</b>
-                                <input class="input" type="number" v-model="vazao" placeholder="vazão atual (ml/h)"/>
+                                <input class="input" type="number" v-model="vazao" placeholder="vazão atual (ml/h)" />
                             </div>
                         </div>
                         <div class="cell">
                             <div class="content" v-if="vazao">
                                 <b>Dose atual</b>
-                                <p>{{ calcDrug(drugData, weight, vazao, 1) }} {{ drugData.UNI_APRESENTACAO }}/{{ drugData.UNI_01 }}</p>
+                                <p>{{ calcDrug(drugData, weight, vazao, 1) }} {{ drugData.UNI_APRESENTACAO }}/{{
+                                    drugData.UNI_01 }}</p>
                             </div>
                         </div>
                     </div>
@@ -116,7 +117,7 @@ is-dark
                         <p>Em {{ drugData.TEMPO_REPETIR }} minutos</p>
                         <b>Fazer (dose extra)</b>
                         <p>{{ showCalc(drugData, calcDrug(drugData, weight, NaN, 2)) }}</p>
-                    </div>    
+                    </div>
                 </div>
             </div>
             <div class="card card has-background-primary-100 has-text-primary-invert" v-if="!weight">
@@ -134,6 +135,6 @@ is-dark
 .drug-name {
     border: none;
     background: none;
-    box-shadow: none;
+    box-shadow: none;    
 }
 </style>
