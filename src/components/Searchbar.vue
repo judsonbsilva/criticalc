@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const emit = defineEmits(['search', 'filterTag']);
 const searchTerm = ref('');
@@ -24,6 +24,14 @@ const handleMoney = (value) => {
     moneyIsOpen.value = value;
 }
 
+
+onMounted(() => {
+    var menu = document.getElementById('input-click-tag');
+    menu.scrollTo({ top:0, left:800, behavior: 'smooth'});
+    setTimeout(() => {
+        menu.scrollTo({ top:0, left:0, behavior: 'smooth'});
+    }, 1500);
+})
 </script>
 
 <template>

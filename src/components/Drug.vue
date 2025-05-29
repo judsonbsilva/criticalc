@@ -40,7 +40,7 @@ const moveUp = () => {
         behavior: 'smooth'
     });
 
-    setInterval(() => {
+    setTimeout(() => {
         window.document.getElementById('INPUT_WEIGHT').focus();
     }, 1000);
     
