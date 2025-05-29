@@ -34,6 +34,18 @@ const colorTag = {
     'psa': 'tag is-info'
 }
 
+const moveUp = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+    setInterval(() => {
+        window.document.getElementById('INPUT_WEIGHT').focus();
+    }, 1000);
+    
+};
+
 /*
 is-dark
     is-light
@@ -123,7 +135,7 @@ is-dark
             <div class="card card has-background-primary-100 has-text-primary-invert" v-if="!weight">
                 <div class="card-content">
                     <div class="content">
-                        <p>Digite o peso para o cálculo de doses!</p>
+                        <button class="button is-outlined" @click=moveUp>Digite o peso aqui para ver as doses</button>
                     </div>
                 </div>
             </div>
