@@ -33,6 +33,7 @@ onMounted(() => {
             <div class="navbar-item input-navbar-item">
                 <div class="control">
                     <input
+                        id="INPUT_WEIGHT"
                         class="input"
                         type="number"
                         placeholder="Peso 70kg"
