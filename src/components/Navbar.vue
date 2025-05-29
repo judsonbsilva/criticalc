@@ -13,12 +13,6 @@ const handleHeight = (ev) => {
     dataHeight.value = Number(ev.target.value);
     emit('updateHeight', dataHeight);
 }
-
-onMounted(() => {
-
-})
-
-
 </script>
 
 <template>
