@@ -135,7 +135,12 @@ is-dark
             <div class="card card has-background-primary-100 has-text-primary-invert" v-if="!weight">
                 <div class="card-content">
                     <div class="content">
-                        <button class="button is-outlined" @click=moveUp>Digite o peso aqui para ver as doses</button>
+                        <button class="button is-outlined" @click=moveUp>
+                            <span class="icon is-small">
+                                <font-awesome-icon :icon="['fas', 'arrow-up']" />
+                            </span>
+                            <span>Digite o peso (na barra do topo) para ver as doses</span>
+                        </button>
                     </div>
                 </div>
             </div>
