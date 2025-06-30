@@ -10,6 +10,7 @@ const props = defineProps({
 });
 
 const vazao = ref(null);
+const isActive = ref(false);
 
 const colorTag = {
     'pcr': 'tag is-black',
@@ -45,6 +46,10 @@ const moveUp = () => {
     }, 1000);
     
 };
+const toggleActive = () => {
+    console.log('toggleActive', isActive.value);
+    isActive.value = !isActive.value;
+};
 
 /*
 is-dark
@@ -61,28 +66,26 @@ is-dark
 //const calc = ref(0);
 </script>
 <template>
-    <div class="grid has-2-cols-mobile has-3-cols-desktop" style="border-bottom: 1px solid #aaa">
-        <div class="content" v-if="drugData ? false: true">
-            <h2>Não localizado ou em construção</h2>
-        </div>
-        <div class="cell" style="cursor:pointer">
-            <div class="card drug-name">
+    <div :class="['grid', 'has-3-cols-desktop', 'has-3-cols-mobile', 'drug-box', isActive ? 'active': '']">
+        <div class="cell is-col-2-mobile">
+            <div class="card drug-card">
                 <div class="card-content">
-                    <div class="content has-text-white">
-                        <b>{{ drugData.NOME }}</b>
-                        <p>{{ drugData.FANTASIA_APRESENTACAO }}</p>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="box drug-name">
-                        <div class="tags">
-                            <span v-for="oneTag in drugData.TAGS" :class=colorTag[oneTag]>{{oneTag}}</span>
-                        </div>
+                    <div class="content has-text-white" @click="toggleActive">
+                        <b class="drug-name">{{ drugData.NOME }}</b>
+                        <p class="drug-name">{{ drugData.FANTASIA_APRESENTACAO }}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="cell">
+        <div class="cell is-col-2-mobile">
+            <div class="box drug-card">
+                <div class="tags">
+                    <span v-for="oneTag in drugData.TAGS" :class=colorTag[oneTag]>{{ oneTag }}</span>
+                </div>
+                <font-awesome-icon class="button-drop" :icon="['fas', 'arrow-right']" @click="toggleActive"/>
+            </div>
+        </div>
+        <div class="cell cell is-col-span-2" v-if="isActive">
             <div class="card">
                 <div class="card-content">
                     <div class="content">
@@ -94,7 +97,7 @@ is-dark
                 </div>
             </div>
         </div>
-        <div class="cell is-col-span-2">
+        <div class="cell cell is-col-span-2"  v-if="isActive">
             <div class="card has-background-primary-100 has-text-primary-invert" v-if="weight">
                 <div class="card-content">
                     <div class="grid">
@@ -132,15 +135,15 @@ is-dark
                     </div>
                 </div>
             </div>
-            <div class="card card has-background-primary-100 has-text-primary-invert" v-if="!weight">
+            <div class="card card has-background-primary-100 has-text-primary-invert" v-else="weight">
                 <div class="card-content">
-                    <div class="content">
-                        <button class="button is-outlined" @click=moveUp>
+                    <div class="content"  @click=moveUp>
+                        <p>
                             <span class="icon is-small">
                                 <font-awesome-icon :icon="['fas', 'arrow-up']" />
                             </span>
                             <span>Digite o peso (na barra do topo) para ver as doses</span>
-                        </button>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -149,9 +152,39 @@ is-dark
 </template>
 
 <style scoped>
-.drug-name {
+.drug-box {
+    border-bottom: 1px solid #aaa;
+    padding: 0px;
+    margin: 0px !important;
+    position:relative;
+}
+
+.drug-card {
     border: none;
     background: none;
     box-shadow: none;    
 }
+
+.active .drug-name  {
+    color: #009cbf;
+    transition: color 0.5s ease-in-out;
+    cursor: pointer !important;
+}
+
+.button-drop {
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    padding: 0.5rem;
+    z-index:2;
+}
+
+.active .button-drop {
+    color: #009cbf;
+    transform: rotate(90deg);
+    transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
 </style>
