@@ -91,8 +91,8 @@ onMounted(() => {
                     <span>Sedação procedural</span>
                 </a>
             </li>
-            <li @click="handleTag('psa')"
-                :class="[ tag == 'psa' ? 'is-active' : '']" >
+            <li @click="handleTag('eletrolito')"
+                :class="[ tag == 'eletrolito' ? 'is-active' : '']" >
                 <a>
                     <span class="icon is-small">
                         <font-awesome-icon :icon="['fas', 'droplet']" />   

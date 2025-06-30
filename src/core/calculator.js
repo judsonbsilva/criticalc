@@ -41,6 +41,9 @@ const calcDrugFlow = (concentration, unity, dosis, weight, typeOfDosis) => {
       var flowMax = round2(dose[1] / concentration);
       
       return [flowMin, flowMax];
+    
+    case 'ml/h':
+      return [dose[0], dose[1]];
       
   }
   return [];

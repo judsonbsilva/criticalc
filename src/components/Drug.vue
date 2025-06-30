@@ -168,7 +168,7 @@ is-dark
 .active .drug-name  {
     color: #009cbf;
     transition: color 0.5s ease-in-out;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .button-drop {
