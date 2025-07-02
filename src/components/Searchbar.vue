@@ -127,7 +127,6 @@ onMounted(() => {
                 <button class="delete" aria-label="close" @click="handleAbout(false)"></button>
             </header>
             <section class="modal-card-body">
-                <b>Atenção!</b><br />
                 <p>Este site é uma calculadora de código aberto disponibilizada gratuitamente a médicos e estudantes de medicina para auxiliar na prescrição de doentes críticos. Não utilize como recomendação médica!</p>
                 <p>As doses são calculadas a partir do peso. Estamos em fase de teste. Se notar doses fora do habitual, desconfie.</p>
                 <br />

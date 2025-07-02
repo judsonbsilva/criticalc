@@ -32,7 +32,8 @@ const colorTag = {
     'iot': 'tag is-black',
     'sri': 'tag is-primary',
     'bnm': 'tag is-danger',
-    'psa': 'tag is-info'
+    'psa': 'tag is-info',
+    'eletrolito': 'tag is-light has-text-dark'
 }
 
 const moveUp = () => {
@@ -70,9 +71,9 @@ is-dark
         <div class="cell is-col-2-mobile">
             <div class="card drug-card">
                 <div class="card-content">
-                    <div class="content has-text-white" @click="toggleActive">
-                        <b class="drug-name">{{ drugData.NOME }}</b>
-                        <p class="drug-name">{{ drugData.FANTASIA_APRESENTACAO }}</p>
+                    <div class="content" @click="toggleActive">
+                        <b class="drug-name has-text-white-bis">{{ drugData.NOME }}</b>
+                        <p class="drug-name has-text-grey">{{ drugData.FANTASIA_APRESENTACAO }}</p>
                     </div>
                 </div>
             </div>
@@ -166,7 +167,7 @@ is-dark
 }
 
 .active .drug-name  {
-    color: #009cbf;
+    color: #009cbf !important;
     transition: color 0.5s ease-in-out;
     cursor: pointer !important;
 }
