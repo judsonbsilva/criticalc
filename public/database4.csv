@@ -1,5 +1,5 @@
 NOME,TAG,CLASSE_APRESENTACAO,FANTASIA_APRESENTACAO,DOSE_APRESENTACAO,UNI_APRESENTACAO,VOLUME_APRESENTACAO,PAGINA,RESUMO_INDICACAO,TEXTO_INDICACAO,DILUICAO,DOSE_SOLUCAO,VOLUME_SOLUCAO,DOSE_01,UNI_01,DOSE_02,VOL_MANU,DESCRICAO,COLATERAIS,ADMINISTRACAO,TEMPO_ADMINISTRACAO,TEMPO_REPETIR
-Fentanil,"analgesico,sedoanalgesia,opioide",Sedativo,250mcg/10mL (50mcg/mL),250,mcg,10,ele,Sedoanalgesia contínua,,5 frascos (50mL) + SF 0.9% 50mL ,1250,100,1-3,kg/h,,,Analgésico opióide. Pode gerar instabilidade hemodinâmica.,,BIC,,
+Fentanil,"analgesico,sedoanalgesia,opioide",Sedativo,250mcg/10mL (50mcg/mL),250,mcg,10,sedativo,Sedoanalgesia contínua,,5 frascos (50mL) + SF 0.9% 50mL ,1250,100,1-3,kg/h,,,Analgésico opióide. Pode gerar instabilidade hemodinâmica.,,BIC,,
 Propofol,"sedativo,sedoanalgesia",Sedativo,200mg/20mL (10mg/mL),200,mg,20,sedativo,Sedoanalgesia contínua por curto período,,puro,1000,100,0.3-3,kg/h,,,Sedativo. Pode gerar cardiodepressão.,,BIC,,
 Midazolam,"sedativo,sedoanalgesia",Sedativo,50mg/10mL (5mg/mL),50,mg,10,sedativo,Sedoanalgesia contínua,,5 frascos (50mL) + SF 0.9% 50mL,250,100,0.02-0.2,kg/h,,,Sedativo benzodiazepínico. Pode gerar cardiodepressão,,BIC,,
 Dexmedetomidina,"sedativo,sedoanalgesia",Sedativo,200mcg/2mL (100mcg/mL),200,mcg,2,sedativo,Sedativo leve (ideal no desmame de sedativos e ventilação),,2 frascos (04mL) + SF 0.9% 96mL,400,100,0.2-1.4,kg/h,,,Sedativo alfa-adrenérgico central com baixa depressão respiratória,,BIC,,
@@ -35,9 +35,9 @@ Cetamina,"psa,sedativo",Sedativo,100mg/2mL (50mg/mL),100,mg,2,psa,Início de aç
 Propofol,"psa,sedativo",Sedativo,200mg/20mL (10mg/mL),200,mg,20,psa,Início de ação 30 segundos; duração 5 minutos,,puro,200,20,0.5-1,fix/kg,0.25-0.5,,Início de ação até 45 segundos; duração 5-10 minutos. A dose pode ser reduzida em 1/3 ou 1/2 em pacientes comprometidos ou idosos,,EVTEMPO,1,3
 Midazolam,"psa,sedativo",Sedativo,15mg/3mL (5mg/mL),15,mg,3,psa,Início de ação 3 minutos; duração 40 minutos,,1 mL + AD 9mL,5,10,0.02-0.03,fix/kg,0.02-0.03,,Início de ação até 1m30s; duração de 15-30 minutos,,EVTEMPO,3,2-5
 Fentanil,"analgesico,psa",Sedativo,100mcg/2mL (50mcg/mL),100,mcg,2,psa,Início de ação 2 minutos; duração 40 minutos,,1 frasco (2mL) + AD 8mL ,100,10,0.5-1,fix/kg,0.5,,Analgésico opióide. Pode gerar instabilidade hemodinâmica.,,EVTEMPO,0.5,2
-NaCl 3% (para bolus),eletrólito,Eletrólitos,3g/100mL (30mg/mL),51,mEq,100,eletrolito,NaCl 3% para hiponatremia aguda sintomático ou grave,,"Utilizando NaCl 10%:  2 frascos (20mL) NaCl10% + 80 mL de SF 0.9%
+NaCl 3% (para bolus),eletrolito,Eletrólitos,3g/100mL (30mg/mL),51,mEq,100,eletrolito,NaCl 3% para hiponatremia aguda sintomático ou grave,,"Utilizando NaCl 10%:  2 frascos (20mL) NaCl10% + 80 mL de SF 0.9%
 
 Utilizando NaCl 20%:  1 frasco (10mL) NaCl20% + 90 mL de SF 0.9%",51,100,51,fix,,,"Fazer bolus lento, reavaliar e repetir dosagem do sódio. A dose pode ser repetida até 3 vezes.",,EVTEMPO,30,
-NaCl 3% (para reposição),eletrólito,Eletrólitos,30g/1000mL (30mg/mL),510,mEq,1000,eletrolito,NaCl 3% para hiponatremia (reposição lenta),,"Utilizando NaCl 10%:  23 frascos (230mL) NaCl10% + 770 mL de SF 0.9%
+NaCl 3% (para reposição),eletrolito,Eletrólitos,30g/1000mL (30mg/mL),510,mEq,1000,eletrolito,NaCl 3% para hiponatremia (reposição lenta),,"Utilizando NaCl 10%:  23 frascos (230mL) NaCl10% + 770 mL de SF 0.9%
 
 Utilizando NaCl 20%:  11 frascos (110mL) NaCl20% + 890 mL SF 0.9%",510,1000,15-30,ml/h,,,"Fazer em BIC, repetir dosagem do sódio a cada 4-6h. Meta de correção entre 6 e 8mEq/24h",,BIC,,
