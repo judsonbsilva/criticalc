@@ -143,6 +143,7 @@ is-dark
                                 <font-awesome-icon :icon="['fas', 'arrow-up']" />
                             </span>
                             <span>Digite o peso (na barra do topo) para ver as doses</span>
+                            <button class="button is-small is-primary" @click=moveUp>Ir para o topo!</button>
                         </p>
                     </div>
                 </div>
