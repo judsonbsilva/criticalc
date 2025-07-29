@@ -5,6 +5,11 @@ const emit = defineEmits(['updateWeight', 'updateHeight']);
 const dataWeight = ref(null);
 const dataHeight = ref(null);
 
+const props = defineProps({
+    weight: Number
+});
+
+
 const handleWeight = (ev) => {
     dataWeight.value = Number(ev.target.value);
     emit('updateWeight', dataWeight);
@@ -13,6 +18,10 @@ const handleHeight = (ev) => {
     dataHeight.value = Number(ev.target.value);
     emit('updateHeight', dataHeight);
 }
+
+onMounted(() => {
+    dataWeight.value = props.weight;
+});
 </script>
 
 <template>

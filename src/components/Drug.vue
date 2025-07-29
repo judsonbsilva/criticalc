@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, watch } from "vue";
+import { onMounted, ref } from "vue";
 import { calcDrug, showCalc } from "../core/calculator.js";
 
 const props = defineProps({
@@ -9,8 +9,20 @@ const props = defineProps({
     tag: String
 });
 
+
+const emit = defineEmits(['updateWeight']);
+
 const vazao = ref(null);
 const isActive = ref(false);
+const dataWeight = ref(null);
+
+const handleWeight = (ev) => {
+    dataWeight.value = Number(ev.target.value);
+}
+
+const send = () => {
+    emit('updateWeight', dataWeight.value);
+};
 
 const colorTag = {
     'pcr': 'tag is-black',
@@ -48,9 +60,17 @@ const moveUp = () => {
     
 };
 const toggleActive = () => {
+    // Ativa o componente e mostra o conteúdo
     console.log('toggleActive', isActive.value);
     isActive.value = !isActive.value;
 };
+
+onMounted(() => {
+    // Atualiza o peso se já estiver definido
+    if (props.weight) {
+        dataWeight.value = props.weight;
+    }
+});
 
 /*
 is-dark
@@ -83,7 +103,7 @@ is-dark
                 <div class="tags">
                     <span v-for="oneTag in drugData.TAGS" :class=colorTag[oneTag]>{{ oneTag }}</span>
                 </div>
-                <font-awesome-icon class="button-drop" :icon="['fas', 'arrow-right']" @click="toggleActive"/>
+                <font-awesome-icon class="button-drop" :icon="['fas', 'arrow-right']" @click="toggleActive" />
             </div>
         </div>
         <div class="cell cell is-col-span-2" v-if="isActive">
@@ -98,7 +118,7 @@ is-dark
                 </div>
             </div>
         </div>
-        <div class="cell cell is-col-span-2"  v-if="isActive">
+        <div class="cell cell is-col-span-2" v-if="isActive">
             <div class="card has-background-primary-100 has-text-primary-invert" v-if="weight">
                 <div class="card-content">
                     <div class="grid">
@@ -138,14 +158,15 @@ is-dark
             </div>
             <div class="card card has-background-primary-100 has-text-primary-invert" v-else="weight">
                 <div class="card-content">
-                    <div class="content"  @click=moveUp>
-                        <p>
-                            <span class="icon is-small">
-                                <font-awesome-icon :icon="['fas', 'arrow-up']" />
-                            </span>
-                            <span>Digite o peso (na barra do topo) para ver as doses</span>
-                            <button class="button is-small is-primary" @click=moveUp>Ir para o topo!</button>
-                        </p>
+                    <div class="content">
+                        <div class="field">
+                            <label class="label has-text-dark">Digite o peso</label>
+                            <div class="control">
+                                <input class="input" type="number" placeholder="Peso (kg)" :value="dataWeight"
+                                    @input=handleWeight />
+                                <button class="button is-primary" @click="send">Calcular</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

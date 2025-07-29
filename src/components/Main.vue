@@ -53,7 +53,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <Navbar @updateWeight=updateWeight @updateHeight=updateHeight />
+    <Navbar @updateWeight=updateWeight @updateHeight=updateHeight :weight=dataWeight />
     <Searchbar @search=updateSearch @filterTag=updateTag />
     <Iot v-if="tag == 'iot'"/>
     <div v-if=data>
@@ -64,6 +64,7 @@ onMounted(() => {
         :weight="dataWeight"
         :tag="tag"
         :key=drugId++
+        @updateWeight=updateWeight
       />
     </div>
     <References />
